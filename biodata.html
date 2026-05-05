@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata - M. Fahriannoor</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 16px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 28px;
+            padding: 36px 30px 28px;
+            max-width: 400px;
+            width: 100%;
+            color: #fff;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .photo-wrapper {
+            width: 108px;
+            height: 108px;
+            border-radius: 50%;
+            margin: 0 auto 14px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 3px solid rgba(99, 179, 237, 0.55);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 0.25s;
+        }
+
+        .photo-wrapper:hover {
+            border-color: rgba(99, 179, 237, 0.9);
+        }
+
+        .photo-wrapper:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.25s;
+            border-radius: 50%;
+            text-align: center;
+            padding: 8px;
+            line-height: 1.3;
+        }
+
+        #fotoImg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: none;
+        }
+
+        #fotoIcon {
+            font-size: 50px;
+            opacity: 0.4;
+        }
+
+        #fotoInput { display: none; }
+
+        .name {
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #fff;
+        }
+
+        .school-badge {
+            display: inline-block;
+            margin-top: 8px;
+            background: linear-gradient(90deg, #4299e1, #63b3ed);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin: 22px 0;
+        }
+
+        /* ===== SECTION ===== */
+        .section-title {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: #63b3ed;
+            margin-bottom: 14px;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .info-icon {
+            font-size: 17px;
+            width: 26px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .info-label {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.88);
+            font-weight: 500;
+        }
+
+        /* ===== HOBI TAGS ===== */
+        .hobi-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 2px;
+        }
+
+        .tag {
+            background: rgba(99, 179, 237, 0.12);
+            border: 1px solid rgba(99, 179, 237, 0.3);
+            color: #90cdf4;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+        }
+
+        /* ===== TOMBOL CERITA ===== */
+        .cerita-btn {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: linear-gradient(90deg, #4299e1, #63b3ed);
+            color: #fff;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 14px;
+            letter-spacing: 0.4px;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .cerita-btn:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:20px;transition:color 0.2s;" onmouseover="this.style.color='#63b3ed'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">← Beranda</a>
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="photo-wrapper">
+                <!-- ============================================================ -->
+                <!-- ✏️ CARA PASANG FOTO:                                         -->
+                <!-- 1. Upload foto kamu ke project (klik kanan > Upload file)    -->
+                <!-- 2. Ganti tulisan "nama-foto-kamu.jpg" di bawah               -->
+                <!--    dengan nama file foto yang kamu upload                    -->
+                <!-- Contoh: src="profil.jpg" atau src="foto/saya.png"            -->
+                <!-- ============================================================ -->
+                <img id="fotoImg"
+                     src="jpg/Lucu.jpg"
+                     alt="Foto Profil"
+                     onerror="this.style.display='none'; document.getElementById('fotoIcon').style.display='block';"
+                     onload="this.style.display='block'; document.getElementById('fotoIcon').style.display='none';">
+                <span id="fotoIcon">👤</span>
+            </div>
+
+            <div class="name">M. Fahriannoor</div>
+            <span class="school-badge">MAN BARSEL PK</span>
+        </div>
+
+        <hr class="divider">
+
+        <!-- DATA PRIBADI -->
+        <div class="section-title">Data Pribadi</div>
+        <div class="info-grid">
+
+            <div class="info-row">
+                <div class="info-icon">📍</div>
+                <div>
+                    <div class="info-label">Tempat, Tanggal Lahir</div>
+                    <div class="info-value">Banjarmasin, 8 Februari 2009</div>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-icon">👦</div>
+                <div>
+                    <div class="info-label">Jenis Kelamin</div>
+                    <div class="info-value">Laki-laki</div>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-icon">🕌</div>
+                <div>
+                    <div class="info-label">Agama</div>
+                    <div class="info-value">Islam</div>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-icon">🎓</div>
+                <div>
+                    <div class="info-label">Pendidikan</div>
+                    <div class="info-value">MAN BARSEL PK</div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="divider">
+
+        <!-- HOBI -->
+        <div class="section-title">Hobi & Minat</div>
+        <div class="hobi-tags">
+            <span class="tag">🏐 Voli</span>
+            <span class="tag">🏊 Berenang</span>
+        </div>
+
+        <div class="footer">Biodata Diri &nbsp;·&nbsp; M. Fahriannoor</div>
+
+    </div>
+
+
+</body>
+</html>

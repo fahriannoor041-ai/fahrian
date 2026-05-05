@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Fahriannoor</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 16px;
+        }
+
+        .container {
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+            border: 3px solid rgba(99, 179, 237, 0.5);
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .greeting {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .name {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .tagline {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 36px;
+            line-height: 1.5;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+        }
+
+        .menu-item:hover {
+            background: rgba(99, 179, 237, 0.12);
+            border-color: rgba(99, 179, 237, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .menu-icon {
+            font-size: 22px;
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .menu-text {
+            text-align: left;
+            flex: 1;
+        }
+
+        .menu-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .menu-desc {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .menu-arrow {
+            font-size: 14px;
+            color: rgba(255,255,255,0.25);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.15);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="avatar">👤</div>
+
+        <div class="greeting">Selamat Datang</div>
+        <div class="name">M. Fahriannoor</div>
+        <div class="tagline">MAN BARSEL PK &nbsp;·&nbsp; Banjarmasin</div>
+
+        <div class="menu">
+
+            <a href="biodata.html" class="menu-item">
+                <div class="menu-icon">📋</div>
+                <div class="menu-text">
+                    <div class="menu-title">Biodata Diri</div>
+                    <div class="menu-desc">Data pribadi & informasi diri</div>
+                </div>
+                <span class="menu-arrow">›</span>
+            </a>
+
+            <a href="cerita.html" class="menu-item">
+                <div class="menu-icon">📖</div>
+                <div class="menu-text">
+                    <div class="menu-title">Cerita Singkat</div>
+                    <div class="menu-desc">Kepribadian, prestasi & cita-cita</div>
+                </div>
+                <span class="menu-arrow">›</span>
+            </a>
+
+        </div>
+
+        <div class="footer">M. Fahriannoor &nbsp;·&nbsp; Personal Page</div>
+
+    </div>
+
+</body>
+</html>
