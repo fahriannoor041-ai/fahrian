@@ -144,7 +144,14 @@
 
     <div class="container">
 
-        <div class="avatar">👤</div>
+        <div class="avatar">
+            <!-- ✏️ Ganti src di bawah dengan nama file foto kamu -->
+            <!-- Contoh: src="profil.jpg" atau src="jpg/foto.jpg"  -->
+            <img src="Lucu.jpg"
+                 alt="Foto"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='👤';"
+                 onload="this.style.display='block';">
+        </div>
 
         <div class="greeting">Selamat Datang</div>
         <div class="name">M. Fahriannoor</div>
